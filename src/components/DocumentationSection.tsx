@@ -1,4 +1,5 @@
 import React from 'react';
+import { DocumentationSection as StyledSection, SectionTitle } from '../styles/StyledComponents';
 
 interface DocumentationSectionProps {
   title: string;
@@ -10,22 +11,12 @@ const DocumentationSection: React.FC<DocumentationSectionProps> = ({
   children 
 }) => {
   return (
-    <div className="documentation-section" style={{ marginBottom: '40px' }}>
-      <h2 style={{ 
-        fontSize: '1.5em', 
-        fontWeight: 'bold', 
-        marginBottom: '16px',
-        padding: '8px 12px',
-        backgroundColor: '#f0f0f0',
-        borderRadius: '4px',
-        color: 'black'
-      }}>
-        {title}
-      </h2>
-      <div className="section-content" style={{ color: 'black' }}>
+    <StyledSection>
+      <SectionTitle>{title}</SectionTitle>
+      <div className="section-content">
         {children}
       </div>
-    </div>
+    </StyledSection>
   );
 };
 

@@ -1,19 +1,12 @@
 import React from 'react';
+import { Content } from '../styles/StyledComponents';
 
 interface ContentProps {
   children: React.ReactNode;
 }
 
-const Content: React.FC<ContentProps> = ({ children }) => {
-  return (
-    <div style={{ 
-      margin: '12px 0',
-      padding: '6px',
-      color: 'black'
-    }}>
-      {children}
-    </div>
-  );
+const ContentComponent: React.FC<ContentProps> = ({ children }) => {
+  return <Content>{children}</Content>;
 };
 
-export default Content;
+export default ContentComponent;

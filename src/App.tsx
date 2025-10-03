@@ -17,11 +17,10 @@ function App() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-
-      <div className="app" style={{
-        padding: '20px',
-        backgroundColor: 'white',
-        color: 'black',
+      <div style={{ 
+        padding: '20px', 
+        backgroundColor: lightTheme.colors.background,
+        color: lightTheme.colors.text,
         minHeight: '100vh'
       }}>
         <h1>DocBuild</h1>
@@ -41,8 +40,9 @@ function App() {
             code={isLinearCode}
             githubUrl="https://github.com/pytorch/ao/blob/main/torchao/quantization/quant_api.py#L278"
           />
+          
           <Explanation>
-            <p><strong>_is_linear function</strong> determines if a module should be quantized. It returns <code>True</code> only if:</p>
+            <p><strong><CodeSnippet code="_is_linear function" /></strong> determines if a module should be quantized. It returns <code>True</code> only if:</p>
             <ul>
               <li>Module is <code>torch.nn.Linear</code></li>
               <li>Has a <code>weight</code> parameter</li>
@@ -60,14 +60,12 @@ function App() {
           <Explanation>
             <p>This class allows granular control over quantization settings per module.</p>
           </Explanation>
-          <Content>
-            <p>Use <CodeSnippet code="quantize_(model, config)" /> to quantize your model.</p>
-          </Content>
           <CriticalNote>
             <p>Critical: Mutable default arguments in Python can cause subtle bugs!</p>
           </CriticalNote>
         </DocumentationSection>
-      </div></ThemeProvider>
+      </div>
+    </ThemeProvider>
   );
 }
 

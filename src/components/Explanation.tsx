@@ -1,21 +1,12 @@
 import React from 'react';
+import { Explanation } from '../styles/StyledComponents';
 
 interface ExplanationProps {
   children: React.ReactNode;
 }
 
-const Explanation: React.FC<ExplanationProps> = ({ children }) => {
-  return (
-    <div style={{
-      padding: '12px',
-      backgroundColor: '#e9ffe9',
-      margin: '12px 0',
-      borderLeft: '4px solid #4CAF50',
-      color: 'black'
-    }}>
-      {children}
-    </div>
-  );
+const ExplanationComponent: React.FC<ExplanationProps> = ({ children }) => {
+  return <Explanation>{children}</Explanation>;
 };
 
-export default Explanation;
+export default ExplanationComponent;

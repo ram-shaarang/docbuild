@@ -1,25 +1,12 @@
 import React from 'react';
+import { CodeSnippet } from '../styles/StyledComponents';
 
 interface CodeSnippetProps {
   code: string;
-  language?: string;
 }
 
-const CodeSnippet: React.FC<CodeSnippetProps> = ({ 
-  code, 
-  language = 'python' 
-}) => {
-  return (
-    <code style={{
-      backgroundColor: '#eeeeee',
-      borderRadius: '6px',
-      padding: '6px',
-      fontFamily: 'monospace',
-      color: 'black'
-    }}>
-      {code}
-    </code>
-  );
+const CodeSnippetComponent: React.FC<CodeSnippetProps> = ({ code }) => {
+  return <CodeSnippet>{code}</CodeSnippet>;
 };
 
-export default CodeSnippet;
+export default CodeSnippetComponent;
