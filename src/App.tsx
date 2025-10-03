@@ -1,11 +1,8 @@
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './styles/themes';
+import { Content, Explanation, CriticalNote, SectionTitle } from './styles/StyledComponents';
 import CodeBox from './components/CodeBox';
 import CodeSnippet from './components/CodeSnippet';
-import Content from './components/Content';
-import Explanation from './components/Explanation';
-import CriticalNote from './components/CriticalNote';
-import DocumentationSection from './components/DocumentationSection';
 
 function App() {
   const quantizeCode = `def quantize_(model, config):
@@ -21,11 +18,15 @@ function App() {
         padding: '20px', 
         backgroundColor: lightTheme.colors.background,
         color: lightTheme.colors.text,
-        minHeight: '100vh'
+        minHeight: '100vh',
+        maxWidth: '1200px',
+        margin: '0 auto'
       }}>
         <h1>DocBuild</h1>
 
-        <DocumentationSection title="quantize_ Function">
+        {/* Section 1 */}
+        <div style={{ marginBottom: '40px' }}>
+          <SectionTitle>quantize_ Function</SectionTitle>
           <CodeBox
             code={quantizeCode}
             githubUrl="https://github.com/pytorch/ao/blob/main/torchao/quantization/quant_api.py#L489"
@@ -33,14 +34,15 @@ function App() {
           <Content>
             <p>filter_fn = _is_linear if filter_fn is None else filter_fn</p>
           </Content>
-        </DocumentationSection>
+        </div>
 
-        <DocumentationSection title="_is_linear Function">
+        {/* Section 2 */}
+        <div style={{ marginBottom: '40px' }}>
+          <SectionTitle>_is_linear Function</SectionTitle>
           <CodeBox
             code={isLinearCode}
             githubUrl="https://github.com/pytorch/ao/blob/main/torchao/quantization/quant_api.py#L278"
           />
-          
           <Explanation>
             <p><strong><CodeSnippet code="_is_linear function" /></strong> determines if a module should be quantized. It returns <code>True</code> only if:</p>
             <ul>
@@ -50,9 +52,11 @@ function App() {
             </ul>
             <p><strong>Prevents double quantization!</strong></p>
           </Explanation>
-        </DocumentationSection>
+        </div>
 
-        <DocumentationSection title="ModuleFqnToConfig Class">
+        {/* Section 3 */}
+        <div style={{ marginBottom: '40px' }}>
+          <SectionTitle>ModuleFqnToConfig Class</SectionTitle>
           <CodeBox
             code={`@dataclass\nclass ModuleFqnToConfig(AOBaseConfig):\n    module_fqn_to_config: Dict[str, Optional[AOBaseConfig]] = field(default_factory=dict)`}
             githubUrl="https://github.com/pytorch/ao/blob/main/torchao/quantization/quant_api.py#L2385"
@@ -63,7 +67,7 @@ function App() {
           <CriticalNote>
             <p>Critical: Mutable default arguments in Python can cause subtle bugs!</p>
           </CriticalNote>
-        </DocumentationSection>
+        </div>
       </div>
     </ThemeProvider>
   );
