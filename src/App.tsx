@@ -15,8 +15,7 @@ function App() {
 
       <CodeBox
         code={sampleCode}
-        file="torchao/quantization/quant_api.py"
-        startLine={488}
+        githubUrl="https://github.com/pytorch/ao/blob/main/torchao/quantization/quant_api.py#L488"
       />
 
       <Content>
