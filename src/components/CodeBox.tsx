@@ -10,11 +10,11 @@ interface CodeBoxProps {
   language?: string;
 }
 
-const CodeBox: React.FC<CodeBoxProps> = ({ 
-  code, 
-  file, 
-  startLine, 
-  endLine, 
+const CodeBox: React.FC<CodeBoxProps> = ({
+  code,
+  file,
+  startLine,
+  endLine,
   language = 'python'
 }) => {
   return (
