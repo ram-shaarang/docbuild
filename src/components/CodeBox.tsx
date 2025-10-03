@@ -32,7 +32,7 @@ const CodeBox: React.FC<CodeBoxProps> = ({
         border: 'solid gray',
         borderWidth: '0.1em 0.1em 0.1em 0.8em',
         borderRadius: '4px',
-        cursor: githubUrl ? 'pointer' : 'default'
+        cursor: githubUrl ? 'pointer' : 'default',
       }}
     >
       {code}

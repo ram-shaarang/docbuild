@@ -14,8 +14,14 @@ function App() {
     return isinstance(mod, torch.nn.Linear) and hasattr(mod, "weight")`;
 
   return (
-    <div className="app" style={{ padding: '20px' }}>
-      <h1>DocBuil</h1>
+
+    <div className="app" style={{
+      padding: '20px',
+      backgroundColor: 'white',
+      color: 'black',
+      minHeight: '100vh'
+    }}>
+      <h1>DocBuild</h1>
 
       <DocumentationSection title="quantize_ Function">
         <CodeBox

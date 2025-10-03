@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface DocumentationSectionProps {
@@ -18,11 +17,12 @@ const DocumentationSection: React.FC<DocumentationSectionProps> = ({
         marginBottom: '16px',
         padding: '8px 12px',
         backgroundColor: '#f0f0f0',
-        borderRadius: '4px'
+        borderRadius: '4px',
+        color: 'black'
       }}>
         {title}
       </h2>
-      <div className="section-content">
+      <div className="section-content" style={{ color: 'black' }}>
         {children}
       </div>
     </div>
