@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './styles/themes';
 import CodeBox from './components/CodeBox';

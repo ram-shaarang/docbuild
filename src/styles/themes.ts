@@ -2,11 +2,6 @@ export const lightTheme = {
   colors: {
     background: '#ffffff',
     text: '#000000',
-    codeBox: {
-      background: '#0d1117',
-      text: '#e6edf3',
-      border: 'gray'
-    },
     explanation: {
       background: '#e9ffe9',
       border: '#4CAF50'
@@ -23,7 +18,7 @@ export const lightTheme = {
   },
   spacing: {
     small: '6px',
-    medium: '12px',
+    medium: '12px', 
     large: '20px'
   },
   borderRadius: {
