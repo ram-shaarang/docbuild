@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from './styles/themes';
+import { lightTheme, darkTheme } from './styles/themes';
 import { Content, Explanation, CriticalNote, SectionTitle } from './styles/StyledComponents';
 import CodeBox from './components/CodeBox';
 import CodeSnippet from './components/CodeSnippet';
@@ -14,13 +14,10 @@ function App() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <div style={{ 
-        padding: '20px', 
+      <div style={{
+        padding: '6px',
         backgroundColor: lightTheme.colors.background,
         color: lightTheme.colors.text,
-        minHeight: '100vh',
-        maxWidth: '1200px',
-        margin: '0 auto'
       }}>
         <h1>DocBuild</h1>
 
